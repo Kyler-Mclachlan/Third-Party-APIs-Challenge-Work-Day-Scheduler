@@ -1,3 +1,5 @@
-$("p").on("click", "p", function() {
-    console.log("div was clicked");
+$(".textarea").on("click", "input", function() {
+  var oldtext = $(this).text();  
+  console.log(oldtext);
   });
+
