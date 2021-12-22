@@ -5,7 +5,11 @@ var test = { id: "eigth", input: "test"};
 
 stored_entries.push(test);
 console.log(test)
-
+// var test_replacement = function(){
+//   for (var i = 0; i < 10; i++){
+//     if (entry.id == stored_entries.[i].id){
+//       console.log("match")
+// }
 $(".zero_button").on("click", function(){
    var text ={ 
   input: document.getElementById("zero").value,
@@ -79,7 +83,7 @@ var saveTask = function(entry){
   else if (entry.input !== ""){
     console.log("not_empty")
     for (var i = 0; i < 10; i++){
-      if (entry.id == stored_entries.id){
+      if (entry.id == stored_entries[i].id){
         console.log("match")
       }
     }
