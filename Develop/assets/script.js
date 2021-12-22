@@ -84,7 +84,10 @@ var saveTask = function(entry){
     console.log("not_empty")
     for (var i = 0; i < 10; i++){
       if (entry.id == stored_entries[i].id){
-        console.log("match")
+        console.log(stored_entries[i].input)
+        stored_entries[i].input = entry.input;
+        console.log(entry.input)
+        console.log(stored_entries[i].input)
       }
     }
   }
