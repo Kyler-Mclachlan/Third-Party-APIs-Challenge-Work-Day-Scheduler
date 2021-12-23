@@ -2,7 +2,7 @@
 var stored_entries = [
   {
   id: "zero",
-  input: ""
+  input: " "
 },
 {
   id: "one",
@@ -41,21 +41,58 @@ input: ""
 var loaded_entries = []
 
 // display current date
-var current_time = moment();
-var display_date = function (){
-  var current_date = moment().format('dddd, MMMM Do ');
-  $('#currentDay').html(current_date);
 
+let current_date = moment();
+let current_time = "";
+let current_hour = 0;
+let dateTimer;
+
+var display_date = function (){
+  dateTimer = setInterval(setTime, 1000);
 }
+
+function setTime() {
+  current_date = moment().format('dddd, MMMM Do HH:mm:ss a');
+  current_time = current_date.split(" ")[3] + current_date.split(" ")[4];
+  current_hour = parseInt(current_time.split(":")[0]);
+  $('#currentDay').html(current_date);
+  timeColor();
+}
+
+
+
 display_date();
-var times = ["#zero", "#one", "#two"]
+var times = [
+  {element: "#zero", time: 9}, 
+  {element: "#one", time: 10},
+  {element: "#two", time: 11}, 
+  {element: "#three", time: 12},  
+  {element: "#four", time: 13},
+  {element: "#five", time: 14}, 
+  {element: "#six", time: 15},
+  {element: "#seven", time: 16}, 
+  {element: "#eight", time: 17}, 
+]
 // changes color of div
 var timeColor = function(){
   for ( var i = 0; i < times.length; i++){
-    $(times[i]).addClass("past");
-    console.log(times[i])
-    console.log(curr);
+    // console.log("times", times[i].time < parseInt(current_time.));
+    if (times[i].time < current_hour) {
+      // javascript DOM 
+      $(times[i].element).removeClass("future");
+      $(times[i].element).addClass("past");
+    }
+    else if (times[i].time === current_hour) {
+      $(times[i].element).removeClass("past");
+      $(times[i].element).removeClass("future");
+      $(times[i].element).addClass("present");
+    }
   }
+
+  // for ( let i = 0; i < times.length; i++) {
+  //   console.log("should log 3 times");
+  //   console.log("time", times[i])
+  // }
 }
 timeColor();
 // brings in saved tasks
@@ -150,8 +187,8 @@ $(".seven_button").on("click", function(){
 })
 $(".eigth_button").on("click", function(){
   var text ={ 
- input: document.getElementById("eigth").value,
- id: document.getElementById("eigth").id
+ input: document.getElementById("eight").value,
+ id: document.getElementById("eight").id
  };
  saveTask(text);
  console.log(text);
