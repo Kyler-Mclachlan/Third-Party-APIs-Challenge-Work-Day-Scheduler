@@ -41,14 +41,23 @@ input: ""
 var loaded_entries = []
 
 // display current date
+var current_time = moment();
 var display_date = function (){
   var current_date = moment().format('dddd, MMMM Do ');
   $('#currentDay').html(current_date);
 
 }
 display_date();
-console.log(current_date);
-
+var times = ["#zero", "#one", "#two"]
+// changes color of div
+var timeColor = function(){
+  for ( var i = 0; i < times.length; i++){
+    $(times[i]).addClass("past");
+    console.log(times[i])
+    console.log(curr);
+  }
+}
+timeColor();
 // brings in saved tasks
 var loadTasks = function(){
   savedEntries = localStorage.getItem("stored_entries");
