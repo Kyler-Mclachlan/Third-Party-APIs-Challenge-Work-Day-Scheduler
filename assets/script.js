@@ -89,11 +89,6 @@ var timeColor = function(){
       $(times[i].element).addClass("present");
     }
   }
-
-  // for ( let i = 0; i < times.length; i++) {
-  //   console.log("should log 3 times");
-  //   console.log("time", times[i])
-  // }
 }
 timeColor();
 // brings in saved tasks
@@ -112,18 +107,13 @@ var loadTasks = function(){
 // bring in loaded tasks
 loadTasks();
 
-$(".universal").on("click", function(){
-  var text ={ 
-    input: $(this).value,
-    id: document.getElementById("eigth").id
-    };
-    saveTask(text);
-    console.log(text);
-   })
-   
+$(".lead").on("click", function(){
+  $(".zero_button").fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+})
 
 $(".zero_button").on("click", function(){
-   var text ={ 
+  $(".zero_button").fadeOut(100).fadeIn(100);
+  var text ={ 
   input: document.getElementById("zero").value,
   id: document.getElementById("zero").id
   };
@@ -131,6 +121,7 @@ $(".zero_button").on("click", function(){
   console.log(text);
 })
 $(".one_button").on("click", function(){
+  $(".one_button").fadeOut(100).fadeIn(100);
   var text ={ 
  input: document.getElementById("one").value,
  id: document.getElementById("one").id
@@ -139,6 +130,7 @@ $(".one_button").on("click", function(){
  console.log(text);
 })
 $(".two_button").on("click", function(){
+  $(".two_button").fadeOut(100).fadeIn(100);
   var text ={ 
  input: document.getElementById("two").value,
  id: document.getElementById("two").id
@@ -147,6 +139,7 @@ $(".two_button").on("click", function(){
  console.log(text);
 })
 $(".three_button").on("click", function(){
+  $(".three_button").fadeOut(100).fadeIn(100);
   var text ={ 
  input: document.getElementById("three").value,
  id: document.getElementById("three").id
@@ -155,6 +148,7 @@ $(".three_button").on("click", function(){
  console.log(text);
 })
 $(".four_button").on("click", function(){
+  $(".four_button").fadeOut(100).fadeIn(100);
   var text ={ 
  input: document.getElementById("four").value,
  id: document.getElementById("four").id
@@ -163,6 +157,7 @@ $(".four_button").on("click", function(){
  console.log(text);
 })
 $(".five_button").on("click", function(){
+  $(".five_button").fadeOut(100).fadeIn(100);
   var text ={ 
  input: document.getElementById("five").value,
  id: document.getElementById("five").id
@@ -171,6 +166,7 @@ $(".five_button").on("click", function(){
  console.log(text);
 })
 $(".six_button").on("click", function(){
+  $(".six_button").fadeOut(100).fadeIn(100);
   var text ={ 
  input: document.getElementById("six").value,
  id: document.getElementById("six").id
@@ -179,6 +175,7 @@ $(".six_button").on("click", function(){
  console.log(text);
 })
 $(".seven_button").on("click", function(){
+  $(".seven_button").fadeOut(100).fadeIn(100);
   var text ={ 
  input: document.getElementById("seven").value,
  id: document.getElementById("seven").id
@@ -187,6 +184,7 @@ $(".seven_button").on("click", function(){
  console.log(text);
 })
 $(".eigth_button").on("click", function(){
+  $(".eigth_button").fadeOut(100).fadeIn(100);
   var text ={ 
  input: document.getElementById("eight").value,
  id: document.getElementById("eight").id
@@ -222,5 +220,5 @@ var SaveLocal = function(){
   window.localStorage.setItem("stored_entries", JSON.stringify(stored_entries));
 }
 
-window.localStorage.setItem("stored_entries", JSON.stringify(stored_entries));
+
 
