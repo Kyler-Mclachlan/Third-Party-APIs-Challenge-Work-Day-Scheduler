@@ -52,11 +52,10 @@ var display_date = function (){
 }
 
 function setTime() {
-  current_date = moment().format('dddd, MMMM Do HH:mm:ss a');
+  current_date = moment().format('dddd, MMMM Do');
   current_time = current_date.split(" ")[3] + current_date.split(" ")[4];
   current_hour = parseInt(current_time.split(":")[0]);
-  display_time = moment().format('dddd, MMMM Do');
-  $('#currentDay').html(display_time);
+  $('#currentDay').html(current_date);
   timeColor();
 }
 
